@@ -11,6 +11,9 @@ import thunk from 'redux-thunk'
 import orderReducer from './store/reducers/order'
 import authReducer from './store/reducers/auth'
 
+
+
+
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose : null
 
 const rootReducer = combineReducers({
@@ -18,6 +21,8 @@ const rootReducer = combineReducers({
     order: orderReducer,
     auth: authReducer
 })
+
+
 
 const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunk)
